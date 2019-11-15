@@ -9,4 +9,6 @@ data "terraform_remote_state" "prerequisites" {
 module "account_defaults" {
   source = "../../../../"
 
+  account_alias = var.account_alias
+  minimum_password_length = var.minimum_password_length
 }
