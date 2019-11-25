@@ -1,7 +1,7 @@
 version: 2
 jobs:
   test:
-    working_directory: ~/terraform-aws-admin
+    working_directory: ~/terraform-aws-account-defaults
     docker:
       - image: ruby:2.6.0
     steps:
@@ -9,7 +9,7 @@ jobs:
       - run: ./scripts/ci/common/install-git-crypt.sh
       - run: ./scripts/ci/steps/test.sh
   prerelease:
-    working_directory: ~/terraform-aws-admin
+    working_directory: ~/terraform-aws-account-defaults
     docker:
       - image: ruby:2.6.0
     steps:
@@ -17,7 +17,7 @@ jobs:
       - run: ./scripts/ci/common/install-git-crypt.sh
       - run: ./scripts/ci/steps/prerelease.sh
   release:
-    working_directory: ~/terraform-aws-admin
+    working_directory: ~/terraform-aws-account-defaults
     docker:
       - image: ruby:2.6.0
     steps:
