@@ -1,5 +1,5 @@
 resource "aws_iam_account_password_policy" "iam_password_policy" {
-  minimum_password_length = var.minimum_password_length
+  minimum_password_length = local.minimum_password_length
 
   // Allow diceware passwords
   require_lowercase_characters = false
