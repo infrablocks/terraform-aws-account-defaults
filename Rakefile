@@ -82,6 +82,17 @@ namespace :keys do
 end
 
 namespace :secrets do
+  namespace :directory do
+    desc 'Ensure secrets directory exists and is set up correctly'
+    task :ensure do
+      FileUtils.mkdir_p('config/secrets')
+      unless File.exist?('config/secrets/.unlocked')
+        File.write('config/secrets/.unlocked', 'true')
+      end
+    end
+  end
+
+  desc 'Regenerate all secrets'
   task regenerate: %w[
     directory:ensure
     encryption:passphrase:generate
@@ -160,11 +171,6 @@ namespace :test do
     t.pattern = 'spec/unit/**{,/*/**}/*_spec.rb'
     t.rspec_opts = '-I spec/unit'
 
-    plugin_cache_directory =
-      "#{Paths.project_root_directory}/vendor/terraform/plugins"
-
-    mkdir_p(plugin_cache_directory)
-
     ENV['AWS_REGION'] = configuration.region
   end
 
@@ -172,11 +178,6 @@ namespace :test do
   RSpec::Core::RakeTask.new(integration: ['terraform:ensure']) do |t|
     t.pattern = 'spec/integration/**{,/*/**}/*_spec.rb'
     t.rspec_opts = '-I spec/integration'
-
-    plugin_cache_directory =
-      "#{Paths.project_root_directory}/vendor/terraform/plugins"
-
-    mkdir_p(plugin_cache_directory)
 
     ENV['AWS_REGION'] = configuration.region
   end
