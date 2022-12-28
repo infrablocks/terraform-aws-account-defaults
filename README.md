@@ -3,6 +3,7 @@ Terraform AWS Account Defaults
 
 [![Version](https://img.shields.io/github/v/tag/infrablocks/terraform-aws-account-defaults?label=version&sort=semver)](https://github.com/infrablocks/terraform-aws-account-defaults/tags)
 [![Build Pipeline](https://img.shields.io/circleci/build/github/infrablocks/terraform-aws-account-defaults/main?label=build-pipeline)](https://app.circleci.com/pipelines/github/infrablocks/terraform-aws-account-defaults?filter=all)
+[![Maintainer](https://img.shields.io/badge/maintainer-go--atomic.io-red)](https://go-atomic.io)
 
 A Terraform module for configuring account defaults.
 
