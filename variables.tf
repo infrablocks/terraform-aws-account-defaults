@@ -6,5 +6,5 @@ variable "account_alias" {
 variable "minimum_password_length" {
   type = number
   default = 32
-  description = "The minimum password length for the account."
+  description = "The minimum password length allowed for any user in the account."
 }

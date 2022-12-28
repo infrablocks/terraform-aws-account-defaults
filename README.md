@@ -34,10 +34,10 @@ for more details.
 
 ### Inputs
 
-| Name                    | Description                                                     | Default | Required |
-|-------------------------|-----------------------------------------------------------------|:-------:|:--------:|
-| account_alias           | The alias to configure on the account                           |    -    |   yes    |
-| minimum_password_length | The minimum password length allowed for any user in the account |   32    |    no    |
+| Name                    | Description                                                      | Default | Required |
+|-------------------------|------------------------------------------------------------------|:-------:|:--------:|
+| account_alias           | The alias to use for the account.                                |    -    |   yes    |
+| minimum_password_length | The minimum password length allowed for any user in the account. |   32    |    no    |
 
 ### Outputs
 
@@ -57,7 +57,7 @@ Development
 In order for the build to run correctly, a few tools will need to be installed
 on your development machine:
 
-* Ruby (3.1.1)
+* Ruby (3.1)
 * Bundler
 * git
 * git-crypt
